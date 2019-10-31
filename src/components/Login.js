@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../App';
+import auth from '../services/auth';
 
 export const Login = () => {
   // App.js の `value={{ state, dispatch }}`にアクセスできる
@@ -26,26 +27,13 @@ export const Login = () => {
       isSubmitting: true,
       errorMessage: null
     });
-    fetch('', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: data.email,
-        password: data.password
-      })
-    })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw res;
-      })
-      .then(resJson => {
+
+    auth
+      .login(data)
+      .then(result => {
         dispatch({
           type: 'LOGIN',
-          payload: resJson
+          payload: result
         });
       })
       .catch(error => {
