@@ -25,11 +25,11 @@ export const Home = () => {
   }, [authState]);
 
   return (
-    <div className="home">
+    <div>
       {state.isFetching ? (
-        <span className="loader">LOADING...</span>
+        <span>LOADING...</span>
       ) : state.hasError ? (
-        <span className="error">AN ERROR HAS OCCURED</span>
+        <span>AN ERROR HAS OCCURED</span>
       ) : (
         <>
           {state.songs.length > 0 &&

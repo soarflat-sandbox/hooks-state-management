@@ -46,9 +46,9 @@ export const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="card">
-        <div className="container">
+    <div>
+      <div>
+        <div>
           <form onSubmit={handleFormSubmit}>
             <h1>Login</h1>
 
@@ -74,9 +74,7 @@ export const Login = () => {
               />
             </label>
 
-            {data.errorMessage && (
-              <span className="form-error">{data.errorMessage}</span>
-            )}
+            {data.errorMessage && <span>{data.errorMessage}</span>}
 
             <button disabled={data.isSubmitting}>
               {data.isSubmitting ? 'Loading...' : 'Login'}
