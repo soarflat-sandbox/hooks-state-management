@@ -1,3 +1,5 @@
+# [How to manage state in a React app with just Context and Hooks](https://www.freecodecamp.org/news/state-management-with-react-hooks/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
